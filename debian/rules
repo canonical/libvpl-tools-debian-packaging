@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+
+override_dh_auto_configure:
+	export VPL_INSTALL_DIR=`pwd`/../_vplinstall
+	cmake -B _build -DCMAKE_INSTALL_PREFIX=${VPL_INSTALL_DIR}
+
+override_dh_clean:
+	rm -rf _build
+	dh_clean
+
+%:
+	dh $@ --builddir build/

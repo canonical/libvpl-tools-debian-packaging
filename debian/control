@@ -1,0 +1,29 @@
+Source: libvpl-tools
+Section: graphics
+Priority: optional
+Maintainer: Shane McKee <shane.mckee@canonical.com>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ pkg-config,
+ libdrm-dev,
+ libva-dev,
+ libx11-dev,
+ libx11-xcb-dev,
+ libxcb-present-dev,
+ libxcb-dri3-dev,
+ libwayland-dev,
+ wayland-protocols,
+ libvpl-dev,
+Standards-Version: 4.6.0
+Homepage: https://github.com/intel/libvpl-tools
+Vcs-Browser: https://github.com/intel/libvpl-tools
+Vcs-Git: https://github.com/intel/libvpl-tools.git
+Rules-Requires-Root: no
+
+Package: libvpl-tools
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Intel oneVPL GPU Runtime -- shared library
+ Intel® Video Processing Library (Intel® VPL) tools provide access to hardware
+ accelerated video decode, encode, and processing capabilities on Intel® GPUs
+ from the command line.
